@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booker.Core", "src\Booker.Core\Booker.Core.csproj", "{80FC1BB4-0E13-40B6-BF0A-4BFC9CB6D816}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booker.Shared", "src\Booker.Shared\Booker.Shared.csproj", "{1AFF0A9B-909F-4DCD-8CDF-F3B934AC84F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{80FC1BB4-0E13-40B6-BF0A-4BFC9CB6D816}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80FC1BB4-0E13-40B6-BF0A-4BFC9CB6D816}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80FC1BB4-0E13-40B6-BF0A-4BFC9CB6D816}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AFF0A9B-909F-4DCD-8CDF-F3B934AC84F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AFF0A9B-909F-4DCD-8CDF-F3B934AC84F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AFF0A9B-909F-4DCD-8CDF-F3B934AC84F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AFF0A9B-909F-4DCD-8CDF-F3B934AC84F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
