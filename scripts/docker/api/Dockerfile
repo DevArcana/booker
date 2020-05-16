@@ -5,6 +5,7 @@ WORKDIR /app
 COPY src/Booker.API/*.csproj ./src/Booker.API/
 COPY src/Booker.Core/*.csproj ./src/Booker.Core/
 COPY src/Booker.Shared/*.csproj ./src/Booker.Shared/
+COPY src/Booker.Infrastructure/*.csproj ./src/Booker.Infrastructure/
 
 COPY *.sln ./
 

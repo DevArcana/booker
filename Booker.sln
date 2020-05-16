@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booker.Shared", "src\Booker
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booker.API", "src\Booker.API\Booker.API.csproj", "{83103230-F6CC-4DD6-BCAC-D3F755B0D73A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booker.Infrastructure", "src\Booker.Infrastructure\Booker.Infrastructure.csproj", "{7B17104C-EF1D-45F5-8F47-C7155B13731C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{83103230-F6CC-4DD6-BCAC-D3F755B0D73A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83103230-F6CC-4DD6-BCAC-D3F755B0D73A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83103230-F6CC-4DD6-BCAC-D3F755B0D73A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B17104C-EF1D-45F5-8F47-C7155B13731C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B17104C-EF1D-45F5-8F47-C7155B13731C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B17104C-EF1D-45F5-8F47-C7155B13731C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B17104C-EF1D-45F5-8F47-C7155B13731C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
