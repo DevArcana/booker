@@ -5,7 +5,7 @@
 -- Dumped from database version 12.2
 -- Dumped by pg_dump version 12.2
 
--- Started on 2020-05-16 11:26:15
+-- Started on 2020-05-17 10:48:13
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -107,9 +107,11 @@ CREATE TABLE public.book_tag (
 
 CREATE TABLE public.books (
     id integer NOT NULL,
-    isbn character varying(13),
+    isbn character varying(17),
     publisher integer,
-    title character varying(48) NOT NULL
+    title character varying(48) NOT NULL,
+    original_title character varying(64),
+    date smallint
 );
 
 
@@ -344,11 +346,7 @@ ALTER TABLE ONLY public.tags ALTER COLUMN id SET DEFAULT nextval('public.tags_id
 --
 
 COPY public.authors (id, first_name, middle_name, last_name) FROM stdin;
-1	John	H	Smith
-2	Henry	Bob	Smith
-3	Albert	H	Johnson
-4	Joanne	Harry	Johnson
-5	Alice	Harry	Arvind
+6	T	A	Barron
 \.
 
 
@@ -359,6 +357,7 @@ COPY public.authors (id, first_name, middle_name, last_name) FROM stdin;
 --
 
 COPY public.book_author (book, author) FROM stdin;
+18	6
 \.
 
 
@@ -398,16 +397,8 @@ COPY public.book_tag (book, tag) FROM stdin;
 -- Data for Name: books; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-COPY public.books (id, isbn, publisher, title) FROM stdin;
-1	\N	1	The Book of Stories
-10	\N	1	Amazing Tales
-11	\N	1	Who guessed?
-12	\N	2	Cooking with me
-13	\N	2	Lets cook
-14	\N	3	How to end a story well
-15	\N	3	Of rocks and pieces
-16	\N	1	Amazing journey
-17	\N	3	How to dance
+COPY public.books (id, isbn, publisher, title, original_title, date) FROM stdin;
+18	978-83-7778-168-5	5	Merlin Nieznane Lata	Merlin. The Lost Years	2012
 \.
 
 
@@ -428,10 +419,6 @@ COPY public.buildings (id, name, address, display_name) FROM stdin;
 --
 
 COPY public.genres (id, genre, display_genre) FROM stdin;
-1	fantasy	Fantasy
-2	sci-fi	Science Fiction
-3	science	Science
-4	cooking	Cooking
 \.
 
 
@@ -452,10 +439,7 @@ COPY public.libraries (id, name, building, display_name) FROM stdin;
 --
 
 COPY public.publishers (id, name) FROM stdin;
-1	Amazing Publishment
-2	Public Books
-3	Boo King
-4	Publish.Me
+5	G+J książki
 \.
 
 
@@ -466,11 +450,6 @@ COPY public.publishers (id, name) FROM stdin;
 --
 
 COPY public.tags (id, tag, display_tag) FROM stdin;
-1	xxi	XXI
-2	classic	Classic
-3	happy	Happy
-4	deep	Deep
-5	chardev	Character Development
 \.
 
 
@@ -480,7 +459,7 @@ COPY public.tags (id, tag, display_tag) FROM stdin;
 -- Name: authors_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.authors_id_seq', 5, true);
+SELECT pg_catalog.setval('public.authors_id_seq', 6, true);
 
 
 --
@@ -489,7 +468,7 @@ SELECT pg_catalog.setval('public.authors_id_seq', 5, true);
 -- Name: books_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.books_id_seq', 17, true);
+SELECT pg_catalog.setval('public.books_id_seq', 19, true);
 
 
 --
@@ -516,7 +495,7 @@ SELECT pg_catalog.setval('public.libraries_id_seq', 1, false);
 -- Name: publishers_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.publishers_id_seq', 4, true);
+SELECT pg_catalog.setval('public.publishers_id_seq', 5, true);
 
 
 --
@@ -574,7 +553,7 @@ ALTER TABLE ONLY public.book_tag
 
 
 --
--- TOC entry 2750 (class 2606 OID 32863)
+-- TOC entry 2750 (class 2606 OID 32987)
 -- Name: books books_isbn_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -691,7 +670,7 @@ ALTER TABLE ONLY public.tags
 
 
 --
--- TOC entry 2748 (class 1259 OID 32982)
+-- TOC entry 2748 (class 1259 OID 32988)
 -- Name: books_isbn_idx; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -820,7 +799,7 @@ ALTER TABLE ONLY public.libraries
     ADD CONSTRAINT libraries_building_fkey FOREIGN KEY (building) REFERENCES public.buildings(id);
 
 
--- Completed on 2020-05-16 11:26:15
+-- Completed on 2020-05-17 10:48:13
 
 --
 -- PostgreSQL database dump complete
