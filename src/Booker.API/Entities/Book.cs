@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace Booker.Infrastructure
+namespace Booker.API.Entities
 {
-    public class Book
+    public class Book : BaseEntity
     {
         public Book()
         {
@@ -12,8 +11,6 @@ namespace Booker.Infrastructure
             BookGenre = new HashSet<BookGenre>();
             BookTag = new HashSet<BookTag>();
         }
-
-        public int Id { get; set; }
         public string Isbn { get; set; }
         public int? Publisher { get; set; }
         public string Title { get; set; }

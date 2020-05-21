@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Booker.Infrastructure
+﻿namespace Booker.API.Entities
 {
     public class BookGenre
     {
@@ -9,6 +6,6 @@ namespace Booker.Infrastructure
         public int Genre { get; set; }
 
         public virtual Book BookNavigation { get; set; }
-        public virtual Genres GenreNavigation { get; set; }
+        public virtual Genre GenreNavigation { get; set; }
     }
 }

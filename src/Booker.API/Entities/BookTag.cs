@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Booker.Infrastructure
+﻿namespace Booker.API.Entities
 {
     public class BookTag
     {
@@ -9,6 +6,6 @@ namespace Booker.Infrastructure
         public int Tag { get; set; }
 
         public virtual Book BookNavigation { get; set; }
-        public virtual Tags TagNavigation { get; set; }
+        public virtual Tag TagNavigation { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace Booker.Shared
+﻿namespace Booker.API.Entities
 {
     public class BaseEntity
     {

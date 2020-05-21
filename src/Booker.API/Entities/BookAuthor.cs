@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Booker.Infrastructure
+﻿namespace Booker.API.Entities
 {
     public class BookAuthor
     {

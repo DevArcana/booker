@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace Booker.Infrastructure
+namespace Booker.API.Entities
 {
-    public class Library
+    public class Library : BaseEntity
     {
         public Library()
         {
             BookCopies = new HashSet<BookCopy>();
         }
-
-        public int Id { get; set; }
+        
         public string Name { get; set; }
         public int Building { get; set; }
         public string DisplayName { get; set; }

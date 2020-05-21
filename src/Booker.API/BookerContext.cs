@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Booker.API.Entities;
+using Microsoft.EntityFrameworkCore;
 
-namespace Booker.Infrastructure
+namespace Booker.API
 {
     public class BookerContext : DbContext
     {
@@ -21,10 +22,10 @@ namespace Booker.Infrastructure
         public virtual DbSet<BookTag> BookTag { get; set; }
         public virtual DbSet<Book> Books { get; set; }
         public virtual DbSet<Building> Buildings { get; set; }
-        public virtual DbSet<Genres> Genres { get; set; }
+        public virtual DbSet<Genre> Genres { get; set; }
         public virtual DbSet<Library> Libraries { get; set; }
         public virtual DbSet<Publisher> Publishers { get; set; }
-        public virtual DbSet<Tags> Tags { get; set; }
+        public virtual DbSet<Tag> Tags { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -211,26 +212,26 @@ namespace Booker.Infrastructure
                     .HasMaxLength(16);
             });
 
-            modelBuilder.Entity<Genres>(entity =>
+            modelBuilder.Entity<Genre>(entity =>
             {
                 entity.ToTable("genres");
 
-                entity.HasIndex(e => e.DisplayGenre)
+                entity.HasIndex(e => e.DisplayName)
                     .HasName("genres_display_genre_key")
                     .IsUnique();
 
-                entity.HasIndex(e => e.Genre)
+                entity.HasIndex(e => e.Name)
                     .HasName("genres_genre_idx")
                     .HasMethod("hash");
 
                 entity.Property(e => e.Id).HasColumnName("id");
 
-                entity.Property(e => e.DisplayGenre)
+                entity.Property(e => e.DisplayName)
                     .IsRequired()
                     .HasColumnName("display_genre")
                     .HasMaxLength(32);
 
-                entity.Property(e => e.Genre)
+                entity.Property(e => e.Name)
                     .IsRequired()
                     .HasColumnName("genre")
                     .HasMaxLength(16);
@@ -277,26 +278,26 @@ namespace Booker.Infrastructure
                     .HasMaxLength(128);
             });
 
-            modelBuilder.Entity<Tags>(entity =>
+            modelBuilder.Entity<Tag>(entity =>
             {
                 entity.ToTable("tags");
 
-                entity.HasIndex(e => e.DisplayTag)
+                entity.HasIndex(e => e.DisplayName)
                     .HasName("tags_display_tag_key")
                     .IsUnique();
 
-                entity.HasIndex(e => e.Tag)
+                entity.HasIndex(e => e.Name)
                     .HasName("tags_tag_idx")
                     .HasMethod("hash");
 
                 entity.Property(e => e.Id).HasColumnName("id");
 
-                entity.Property(e => e.DisplayTag)
+                entity.Property(e => e.DisplayName)
                     .IsRequired()
                     .HasColumnName("display_tag")
                     .HasMaxLength(32);
 
-                entity.Property(e => e.Tag)
+                entity.Property(e => e.Name)
                     .IsRequired()
                     .HasColumnName("tag")
                     .HasMaxLength(16);
