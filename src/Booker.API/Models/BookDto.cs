@@ -10,6 +10,11 @@ namespace Booker.API.Models
         public string? OriginalTitle { get; set; }
         public short? Date { get; set; }
 
+        public BookDto()
+        {
+            
+        }
+        
         public BookDto(Book book)
         {
             Id = book.Id;

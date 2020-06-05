@@ -34,6 +34,7 @@ namespace Booker.API
             
             // Add Services
             services.AddScoped<IBookService, BookService>();
+            services.AddScoped<IBuildingService, BuildingService>();
             
             services.AddControllers();
         }

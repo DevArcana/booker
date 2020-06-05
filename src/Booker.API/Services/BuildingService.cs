@@ -24,6 +24,7 @@ namespace Booker.API.Services
         {
             var building = new Building(name, displayName, address);
             _context.Add(building);
+            _context.SaveChanges();
             
             return new BuildingDto(building);
         }
